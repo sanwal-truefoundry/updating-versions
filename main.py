@@ -10,8 +10,9 @@ def main():
     input_file = os.environ["INPUT_FILE"]
 
     with open(input_file, 'r') as f:
-        data = f.read()
-        print(data['version'])
+        data = f.readlines()
+        print(data[2])
+        print(data[2][-1])
 
     x = 4
     print(x)
