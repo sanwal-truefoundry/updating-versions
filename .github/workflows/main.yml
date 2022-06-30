@@ -1,0 +1,36 @@
+name: Updating Version
+
+on: workflow_dispatch
+
+jobs:
+  build-container:
+    name: Updating Version
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Fetch version
+        id: pl
+        uses: sanwal-truefoundry/updating-versions@updating
+        with:
+          file: 'version.yml'
+      
+      - name: Output results
+        run: |
+          echo ${{ steps.pl.outputs.new-version }}
+      
+      - name: Update version.yml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'version.yml'
+          propertyPath: 'version'
+          value: ${{ steps.pl.outputs.new-version }}
+          branch: updating
+          targetBranch: updating
+          commitChange: 'true'
+          updateFile: 'true'
+      
+      - name: Cat Updated version.yml
+        run: cat version.yml
