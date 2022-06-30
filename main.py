@@ -13,13 +13,12 @@ def main():
         data = f.readlines()
         print(data[2])
         y = data[2]
-        print(y[-1])
 
-    print(y[-1])
-    x=y[-1]+1
-    print(y)
+    print(int(y[-1]))
+    x=int(y[-1])+1
+    print(x)
 
-    set_action_output('new-version', y)
+    set_action_output('new-version', x)
 
     sys.exit(0)
 
