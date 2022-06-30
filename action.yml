@@ -1,5 +1,13 @@
 name: 'Version Updation'
 description: 'TFY Server'
+author: "Sanwal Agarwal"
+inputs:
+  file:
+    description: "File to find version in"
+    required: true
+outputs:
+  new-version:
+    description: "New Version of the file"
 
 runs:
   using: 'node16'
