@@ -10,17 +10,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Fetch version
+        id: pl
+        uses: sanwal-truefoundry/updating-versions@main
+        with:
+          file: 'version.yml'
       
       - name: Output results
         run: |
-          echo ${{ jobs.build.steps.pl.outputs.new-version }}
+          echo ${{ steps.pl.outputs.new-version }}
       
       - name: Update version.yml
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'version.yml'
           propertyPath: 'version'
-          value: ${{ jobs.build.steps.pl.outputs.new-version }}
+          value: ${{ steps.pl.outputs.new-version }}
           branch: main
           targetBranch: main
           commitChange: 'true'
@@ -47,22 +53,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Fetch version
-        id: pl
-        uses: sanwal-truefoundry/updating-versions@main
-        with:
-          file: 'version2.yml'
-      
       - name: Output results
         run: |
-          echo ${{ steps.pl.outputs.new-version }}
+          echo ${{ needs.build.steps.pl.outputs.new-version }}
 
       - name: Update version.yml
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'version2.yml'
           propertyPath: 'dependencies.version'
-          value: ${{ steps.pl.outputs.new-version }}
+          value: ${{ needs.build.steps.pl.outputs.new-version }}
           branch: main
           targetBranch: main
           commitChange: 'true'
