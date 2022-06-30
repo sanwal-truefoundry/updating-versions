@@ -15,9 +15,8 @@ def main():
         y = data[2]
         print(y[-1])
 
-    y = 4
-    print(y)
-    y=y+1
+    print(y[-1])
+    x=y[-1]+1
     print(y)
 
     set_action_output('new-version', y)
