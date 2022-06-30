@@ -13,7 +13,7 @@ jobs:
 
       - name: Fetch version
         id: pl
-        uses: sanwal-truefoundry/updating-versions@updating
+        uses: sanwal-truefoundry/updating-versions@main
         with:
           file: 'version.yml'
       
