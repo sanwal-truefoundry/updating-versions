@@ -7,6 +7,9 @@ jobs:
     name: Updating Version
     runs-on: ubuntu-latest
 
+    outputs:
+      output1: ${{ steps.pl.outputs.new-version }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -55,14 +58,14 @@ jobs:
       
       - name: Output results
         run: |
-          echo ${{ needs.build.steps.pl.outputs.new-version }}
+          echo ${{ needs.build.outputs.output1 }}
 
       - name: Update version.yml
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'version2.yml'
           propertyPath: 'dependencies.version'
-          value: ${{ needs.build.steps.pl.outputs.new-version }}
+          value: ${{ needs.build.outputs.output1 }}
           branch: main
           targetBranch: main
           commitChange: 'true'
