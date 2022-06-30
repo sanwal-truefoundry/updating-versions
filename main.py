@@ -1,6 +1,5 @@
 import os
 import sys
-import yaml
 
 
 def set_action_output(name: str, value: str):
@@ -10,10 +9,10 @@ def set_action_output(name: str, value: str):
 def main():
     input_file = os.environ["INPUT_FILE"]
 
-    with open(input_file, 'r') as file:
-        data = yaml.load(file)
+    with open(input_file, 'r') as f:
+        print(f)
 
-    x = data['version']
+    x = f['version']
     print(x)
     x=x+1
     print(x)
