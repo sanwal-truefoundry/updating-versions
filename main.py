@@ -12,7 +12,7 @@ def main():
     with open(input_file, 'r') as f:
         print(f)
 
-    x = f['version']
+    x = 2
     print(x)
     x=x+1
     print(x)
