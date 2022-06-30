@@ -1,6 +1,6 @@
 import os
 import sys
-import yml
+import yaml
 
 
 def set_action_output(name: str, value: str):
