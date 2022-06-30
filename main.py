@@ -18,7 +18,7 @@ def main():
     print(int(y[l-5:l-3]))
     x=str(int(y[l-5:l-3])+1)
     print(x)
-    z = y[9:12]+x
+    z = y[9:13]+x
     print(z)
 
     set_action_output('new-version', z)
