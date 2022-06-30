@@ -10,9 +10,9 @@ def main():
     input_file = os.environ["INPUT_FILE"]
 
     with open(input_file, 'r') as f:
-        print(f)
+        print(f.read())
 
-    x = 2
+    x = 3
     print(x)
     x=x+1
     print(x)
