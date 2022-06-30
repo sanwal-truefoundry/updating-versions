@@ -1,7 +1,7 @@
 apiVersion: v2
 name: truefoundry
-version: 0.1.25
-description: "Truefoundry applications"
+version: 0.1.26
+description: Truefoundry applications
 maintainers:
   - name: truefoundry
 dependencies:
