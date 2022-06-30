@@ -13,7 +13,7 @@ def main():
         data = f.read()
         print(data[2])
 
-    x = 3
+    x = 4
     print(x)
     x=x+1
     print(x)
