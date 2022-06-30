@@ -11,7 +11,7 @@ def main():
 
     with open(input_file, 'r') as f:
         data = f.read()
-        print(data[2])
+        print(data['version'])
 
     x = 4
     print(x)
