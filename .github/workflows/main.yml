@@ -1,7 +1,7 @@
 name: Updating Version
 
 on: 
-  [workflow_dispatch]
+  [workflow_dispatch,push]
 
 jobs:
   build-container:
