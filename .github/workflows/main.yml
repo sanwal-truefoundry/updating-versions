@@ -11,10 +11,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - uses: pocket-apps/action-update-version@v1
+      
+      - name: Update version.yml
+        uses: fjogeleit/yaml-update-action@main
         with:
-          files: 'version.yml'
-          version-regexp: '\d'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          branch-name: updating
+          valueFile: 'version.yaml'
+          propertyPath: 'version.version'
+          value: propertyPath + 1
+          commitChange: false
+          updateFile: true
