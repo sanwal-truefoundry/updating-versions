@@ -10,7 +10,8 @@ def main():
     input_file = os.environ["INPUT_FILE"]
 
     with open(input_file, 'r') as f:
-        print(f.read())
+        data = f.read()
+        print(data[2])
 
     x = 3
     print(x)
