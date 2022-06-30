@@ -15,8 +15,8 @@ def main():
         y = data[2]
 
     l = len(y)
-    print(int(y[l-5:l-3]))
-    x=str(int(y[l-5:l-3])+1)
+    print(int(y[l-4:l-2]))
+    x=str(int(y[l-4:l-2])+1)
     print(x)
     z = y[9:13]+x
     print(z)
