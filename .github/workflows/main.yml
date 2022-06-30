@@ -3,7 +3,7 @@ name: Updating Version
 on: workflow_dispatch
 
 jobs:
-  build-container:
+  build:
     name: Updating Version
     runs-on: ubuntu-latest
 
@@ -31,6 +31,28 @@ jobs:
           targetBranch: main
           commitChange: 'true'
           updateFile: 'true'
-      
+
+  print:
+    name: Printing version file
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Cat Updated version.yml
         run: cat version.yml
+  
+  notify:
+    name: Updating Version 2
+    needs: print
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Update version.yml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'version2.yml'
+          propertyPath: 'dependencies.version'
+          value: ${{ steps.pl.outputs.new-version }}
+          branch: main
+          targetBranch: main
+          commitChange: 'true'
+          updateFile: 'true' 
