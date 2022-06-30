@@ -1,19 +1,6 @@
 apiVersion: v2
-name: truefoundry
-version: 0.1.25
-description: "Truefoundry applications"
+name: mlfoundry-server
+version: 0.1.10
+description: Helm Chart for MLFoundry
 maintainers:
   - name: truefoundry
-dependencies:
-  - condition: mlfoundry-server.enabled
-    name: mlfoundry-server
-    repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-    version: 0.1.10
-  - condition: servicefoundry-server.enabled
-    name: servicefoundry-server
-    repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-    version: 0.1.12
-  - condition: truefoundry-frontend-app.enabled
-    name: truefoundry-frontend-app
-    repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-    version: 0.1.17
