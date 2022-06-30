@@ -15,13 +15,13 @@ def main():
         y = data[2]
 
     l = len(y)
-    print(int(y[l-4:l-2]))
-    x=str(int(y[l-4:l-2])+1)
+    print(int(y[l-5:l-3]))
+    x=str(int(y[l-5:l-3])+1)
     print(x)
-    z = y[l-8:l-6]+x
+    z = y[9:12]+x
     print(z)
 
-    set_action_output('new-version', z)
+    set_action_output('new-version', z)+
 
     sys.exit(0)
 
