@@ -1,7 +1,7 @@
 name: Updating Version
 
 on: 
-  [workflow_dispatch,push]
+  [workflow_dispatch]
 
 jobs:
   build-container:
@@ -17,7 +17,7 @@ jobs:
         with:
           valueFile: 'version.yml'
           propertyPath: 'version'
-          value: 2
+          value: propertyPath+1
           branch: updating
           targetBranch: updating
           commitChange: 'true'
