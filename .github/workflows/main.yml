@@ -15,7 +15,7 @@ jobs:
       - name: Update version.yml
         uses: fjogeleit/yaml-update-action@main
         with:
-          valueFile: 'version.yaml'
+          valueFile: 'version.yml'
           propertyPath: 'version.version'
           value: propertyPath + 1
           commitChange: false
