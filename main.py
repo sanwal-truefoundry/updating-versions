@@ -21,7 +21,7 @@ def main():
     z = y[l-8:l-6]+x
     print(z)
 
-    set_action_output('new-version', x)
+    set_action_output('new-version', z)
 
     sys.exit(0)
 
