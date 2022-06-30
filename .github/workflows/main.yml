@@ -16,7 +16,7 @@ jobs:
         id: pl
         uses: sanwal-truefoundry/updating-versions@updating
         with:
-          file: "version.yml"
+          file: 'version.yml'
       
       - name: Output results
         run: |

@@ -10,5 +10,5 @@ outputs:
     description: "New Version of the file"
 
 runs:
-  using: 'node16'
-  main: 'main.yml'
+  using: "docker"
+  image: "Dockerfile"
