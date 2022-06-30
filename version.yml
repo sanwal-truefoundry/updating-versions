@@ -1,9 +1,6 @@
-# From https://github.com/artefactory-global/mlflow-tracking-server
-# From https://github.com/cetic/helm-mlflow
-
 apiVersion: v2
 name: mlfoundry-server
-version: 1
-description: "Helm Chart for MLFoundry"
+version: '2'
+description: Helm Chart for MLFoundry
 maintainers:
   - name: truefoundry
