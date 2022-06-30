@@ -1,0 +1,6 @@
+name: 'Version Updation'
+description: 'TFY Server'
+
+runs:
+  using: 'node16'
+  main: 'main.yml'
