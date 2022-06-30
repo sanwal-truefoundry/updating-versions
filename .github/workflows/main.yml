@@ -14,6 +14,6 @@ jobs:
 
       - uses: pocket-apps/action-update-version@v1
         with:
-          files: 'version.yaml'
+          files: 'version.yml'
           version-regexp: '\d+.\d+.\d+'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
