@@ -12,14 +12,15 @@ def main():
     with open(input_file, 'r') as f:
         data = f.readlines()
         print(data[2])
-        print(data[2][-1])
+        y = data[2]
+        print(y[-1])
 
-    x = 4
-    print(x)
-    x=x+1
-    print(x)
+    y = 4
+    print(y)
+    y=y+1
+    print(y)
 
-    set_action_output('new-version', x)
+    set_action_output('new-version', y)
 
     sys.exit(0)
 
