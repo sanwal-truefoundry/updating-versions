@@ -27,8 +27,8 @@ jobs:
           valueFile: 'version.yml'
           propertyPath: 'version'
           value: ${{ steps.pl.outputs.new-version }}
-          branch: updating
-          targetBranch: updating
+          branch: main
+          targetBranch: main
           commitChange: 'true'
           updateFile: 'true'
       
