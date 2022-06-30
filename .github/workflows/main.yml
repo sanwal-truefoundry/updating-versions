@@ -20,7 +20,7 @@ jobs:
           value: 2
           branch: updating
           targetBranch: updating
-          commitChange: 'false'
+          commitChange: 'true'
           updateFile: 'true'
       
       - name: Cat Updated version.yml
