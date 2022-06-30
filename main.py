@@ -14,11 +14,11 @@ def main():
         print(data[2])
         y = data[2]
 
-
-    print(int(y[-3:-4]))
-    x=str(int(y[-3:-4])+1)
+    l = len(y)
+    print(int(y[l-4:l-2]))
+    x=str(int(y[l-4:l-2])+1)
     print(x)
-    z = y[-5:-8]+x
+    z = y[l-8:l-6]+x
     print(z)
 
     set_action_output('new-version', x)
