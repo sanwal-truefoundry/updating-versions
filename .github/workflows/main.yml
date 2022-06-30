@@ -18,5 +18,5 @@ jobs:
           valueFile: 'version.yml'
           propertyPath: 'version.version'
           value: propertyPath + 1
-          commitChange: false
+          commitChange: true
           updateFile: true
