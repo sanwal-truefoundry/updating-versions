@@ -16,7 +16,12 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'version.yml'
-          propertyPath: 'version.version'
+          propertyPath: 'version'
           value: 2
-          commitChange: true
-          updateFile: true
+          branch: updating
+          targetBranch: updating
+          commitChange: 'false'
+          updateFile: 'true'
+      
+      - name: Cat Updated version.yml
+        run: cat version.yml
