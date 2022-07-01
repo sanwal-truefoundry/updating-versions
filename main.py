@@ -55,7 +55,7 @@ def main():
     set_action_output('new-version-1', z1)
     set_action_output('new-version-2', z2)
     set_action_output('new-version-3', z3)
-    set_action_output('new-version-3', z4)
+    set_action_output('new-version-4', z4)
 
     sys.exit(0)
 
