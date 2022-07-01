@@ -111,12 +111,10 @@ jobs:
           updateFile: 'true'
 
       - name: Update version.yml
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          valueFile: 'version2.yml'
-          propertyPath: 'dependencies.condition.version'
-          value: ${{ needs.build.outputs.output1 }}
-          branch: main
-          targetBranch: main
-          commitChange: 'true'
-          updateFile: 'true'
+        run: |
+          repo, err := git.CloneGithub("sanwal-truefoundry/updating-versions")
+          file, err := repo.ReadFile("version2.yaml")
+          document, err := document.Parse(file)
+          err = document.Set("dependencies.version", "${{ needs.build.outputs.output1 }}")
+          err = document.Write(file)
+          err = repo.Commit("updated something")
