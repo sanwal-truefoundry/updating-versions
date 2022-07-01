@@ -69,4 +69,5 @@ jobs:
           branch: main
           targetBranch: main
           commitChange: 'true'
-          updateFile: 'true' 
+          updateFile: 'true'
+        if: ${{ dependencies.name == 'mlfoundry-server' }}
