@@ -7,9 +7,9 @@ def set_action_output(name: str, value: str):
 
 
 def main():
-    first_input_file = os.environ["INPUT_FILE"]
-    second_input_file = os.environ["INPUT_FILE"]
-    third_input_file = os.environ["INPUT_FILE"]
+    first_input_file = os.environ["INPUT_FILE_1"]
+    second_input_file = os.environ["INPUT_FILE_2"]
+    third_input_file = os.environ["INPUT_FILE_3"]
 
     with open(first_input_file, 'r') as f1:
         data1 = f1.readlines()
