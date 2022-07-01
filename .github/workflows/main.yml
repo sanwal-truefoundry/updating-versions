@@ -64,10 +64,9 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'version2.yml'
-          propertyPath: 'dependencies.version'
+          propertyPath: 'version'
           value: ${{ needs.build.outputs.output1 }}
           branch: main
           targetBranch: main
           commitChange: 'true'
           updateFile: 'true'
-        if: ${{ contains(${{dependencies.name}}, 'mlfoundry-server') }}
