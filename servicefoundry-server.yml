@@ -1,0 +1,6 @@
+apiVersion: v2
+name: servicefoundry-server
+version: 0.1.12
+description: "Servicefoundry-server deployment chart"
+maintainers:
+  - name: truefoundry

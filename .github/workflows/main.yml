@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      output1: ${{ steps.pl.outputs.new-version }}
+      output1: ${{ steps.pl.outputs.new-version-1 }}
+      output2: ${{ steps.pl.outputs.new-version-2 }}
+      output3: ${{ steps.pl.outputs.new-version-3 }}
 
     steps:
       - name: Checkout
@@ -18,18 +20,46 @@ jobs:
         id: pl
         uses: sanwal-truefoundry/updating-versions@main
         with:
-          file: 'version.yml'
+          file-1: 'mlfoundry-server.yml'
+          file-2: 'servicefoundry-server.yml'
+          file-3: 'truefoundry-frontend-app.yml'
       
       - name: Output results
         run: |
-          echo ${{ steps.pl.outputs.new-version }}
+          echo ${{ steps.pl.outputs.new-version-1 }}
+          echo ${{ steps.pl.outputs.new-version-2 }}
+          echo ${{ steps.pl.outputs.new-version-3 }}
       
-      - name: Update version.yml
+      - name: Update1 version.yml
         uses: fjogeleit/yaml-update-action@main
         with:
-          valueFile: 'version.yml'
+          valueFile: 'mlfoundry-server.yml'
           propertyPath: 'version'
-          value: ${{ steps.pl.outputs.new-version }}
+          value: ${{ steps.pl.outputs.new-version-1 }}
+          branch: main
+          targetBranch: main
+          commitChange: 'true'
+          updateFile: 'true'
+
+      
+      - name: Update2 version.yml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'servicefoundry-server.yml'
+          propertyPath: 'version'
+          value: ${{ steps.pl.outputs.new-version-2 }}
+          branch: main
+          targetBranch: main
+          commitChange: 'true'
+          updateFile: 'true'
+
+      
+      - name: Update3 version.yml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'truefoundry-frontend-app.yml'
+          propertyPath: 'version'
+          value: ${{ steps.pl.outputs.new-version-3 }}
           branch: main
           targetBranch: main
           commitChange: 'true'
@@ -44,8 +74,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cat Updated version.yml
-        run: cat version.yml
+      - name: Cat Updated1 version.yml
+        run: cat mlfoundry-server.yml
+
+      - name: Cat Updated2 version.yml
+        run: cat servicefoundry-server.yml
+
+      - name: Cat Updated3 version.yml
+        run: cat truefoundry-frontend-app.yml
   
   notify:
     name: Updating Version 2

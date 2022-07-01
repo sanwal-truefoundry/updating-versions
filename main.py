@@ -8,20 +8,38 @@ def set_action_output(name: str, value: str):
 
 def main():
     input_file = os.environ["INPUT_FILE"]
+    print(input_file)
+    first_input_file = input_file[0]
+    second_input_file = input_file[1]
+    third_input_file = input_file[2]
 
-    with open(input_file, 'r') as f:
-        data = f.readlines()
-        print(data[2])
-        y = data[2]
+    with open(first_input_file, 'r') as f1:
+        data1 = f1.readlines()
+        y1 = data1[2]
 
-    l = len(y)
-    print(int(y[l-3:l-1]))
-    x=str(int(y[l-3:l-1])+1)
-    print(x)
-    z = y[9:13]+x
-    print(z)
+    l1 = len(y1)
+    x1=str(int(y1[l1-3:l1-1])+1)
+    z1 = y1[9:13]+x1
 
-    set_action_output('new-version', z)
+    with open(second_input_file, 'r') as f2:
+        data2 = f2.readlines()
+        y2 = data2[2]
+
+    l2 = len(y2)
+    x2=str(int(y2[l2-3:l2-1])+1)
+    z2 = y2[9:13]+x2
+
+    with open(third_input_file, 'r') as f3:
+        data3 = f3.readlines()
+        y3 = data3[2]
+
+    l3 = len(y3)
+    x3 = str(int(y3[l-3:l-1])+1)
+    z3 = y3[9:13]+x3
+
+    set_action_output('new-version-1', z1)
+    set_action_output('new-version-2', z2)
+    set_action_output('new-version-3', z3)
 
     sys.exit(0)
 

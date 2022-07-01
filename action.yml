@@ -2,11 +2,21 @@ name: 'Version Updation'
 description: 'TFY Server'
 author: "Sanwal Agarwal"
 inputs:
-  file:
+  file-1:
+    description: "File to find version in"
+    required: true
+  file-2:
+    description: "File to find version in"
+    required: true
+  file-3:
     description: "File to find version in"
     required: true
 outputs:
-  new-version:
+  new-version-1:
+    description: "New Version of the file"
+  new-version-2:
+    description: "New Version of the file"
+  new-version-3:
     description: "New Version of the file"
 
 runs:
