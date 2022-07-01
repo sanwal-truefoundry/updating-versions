@@ -17,3 +17,4 @@ dependencies:
     name: truefoundry-frontend-app
     repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
     version: 0.1.17
+  - version1: 0.1.10

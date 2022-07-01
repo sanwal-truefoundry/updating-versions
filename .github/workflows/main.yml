@@ -64,7 +64,7 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'version2.yml'
-          propertyPath: 'version'
+          propertyPath: 'dependencies.version1'
           value: ${{ needs.build.outputs.output1 }}
           branch: main
           targetBranch: main
