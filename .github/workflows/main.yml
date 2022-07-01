@@ -1,6 +1,6 @@
 name: Updating Version
 
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 
 jobs:
   build:
@@ -70,4 +70,4 @@ jobs:
           targetBranch: main
           commitChange: 'true'
           updateFile: 'true'
-        if: ${{ dependencies.name == 'mlfoundry-server' }}
+        if: ${{ dependencies.name == mlfoundry-server }}
