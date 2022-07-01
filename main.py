@@ -13,7 +13,7 @@ def main():
 
     with open(first_input_file, 'r') as f1:
         data1 = f1.readlines()
-        y1 = data1[2]
+        y1 = data1[5]
 
     l1 = len(y1)
     x1=str(int(y1[l1-3:l1-1])+1)
