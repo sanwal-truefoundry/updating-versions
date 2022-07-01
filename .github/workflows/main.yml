@@ -24,7 +24,7 @@ jobs:
           file-1: 'mlfoundry-server.yml'
           file-2: 'servicefoundry-server.yml'
           file-3: 'truefoundry-frontend-app.yml'
-          file-4: 'version-2.yml'
+          file-4: 'version2.yml'
       
       - name: Output results
         run: |
