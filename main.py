@@ -37,7 +37,7 @@ def main():
 
     print(y3)
     l3 = len(y3)
-    x3 = str(int(y3[l-3:l-1])+1)
+    x3 = str(int(y3[l3-3:l3-1])+1)
     print(x3)
     z3 = y3[9:13]+x3
 
