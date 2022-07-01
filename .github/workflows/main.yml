@@ -70,4 +70,4 @@ jobs:
           targetBranch: main
           commitChange: 'true'
           updateFile: 'true'
-        if: ${{ dependencies.name == mlfoundry-server }}
+        if: ${{ contains(dependencies.name, 'mlfoundry-server') }}
