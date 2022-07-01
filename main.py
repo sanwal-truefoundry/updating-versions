@@ -10,6 +10,7 @@ def main():
     first_input_file = os.environ["INPUT_FILE-1"]
     second_input_file = os.environ["INPUT_FILE-2"]
     third_input_file = os.environ["INPUT_FILE-3"]
+    fourth_input_file = os.environ["INPUT_FILE-4"]
 
     with open(first_input_file, 'r') as f1:
         data1 = f1.readlines()
@@ -41,9 +42,20 @@ def main():
     print(x3)
     z3 = y3[9:13]+x3
 
+    with open(fourth_input_file, 'r') as f4:
+        data4 = f4.readlines()
+        y4 = data4[2]
+
+    print(y4)
+    l4 = len(y4)
+    x4 = str(int(y4[l4-3:l4-1])+1)
+    print(x4)
+    z4 = y4[9:13]+x4
+
     set_action_output('new-version-1', z1)
     set_action_output('new-version-2', z2)
     set_action_output('new-version-3', z3)
+    set_action_output('new-version-3', z4)
 
     sys.exit(0)
 

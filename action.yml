@@ -11,12 +11,17 @@ inputs:
   file-3:
     description: "File to find version in"
     required: true
+  file-4:
+    description: "File to find version in"
+    required: true
 outputs:
   new-version-1:
     description: "New Version of the file"
   new-version-2:
     description: "New Version of the file"
   new-version-3:
+    description: "New Version of the file"
+  new-version-4:
     description: "New Version of the file"
 
 runs:

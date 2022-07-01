@@ -11,6 +11,7 @@ jobs:
       output1: ${{ steps.pl.outputs.new-version-1 }}
       output2: ${{ steps.pl.outputs.new-version-2 }}
       output3: ${{ steps.pl.outputs.new-version-3 }}
+      output4: ${{ steps.pl.outputs.new-version-4 }}
 
     steps:
       - name: Checkout
@@ -23,12 +24,14 @@ jobs:
           file-1: 'mlfoundry-server.yml'
           file-2: 'servicefoundry-server.yml'
           file-3: 'truefoundry-frontend-app.yml'
+          file-4: 'version-2.yml'
       
       - name: Output results
         run: |
           echo ${{ steps.pl.outputs.new-version-1 }}
           echo ${{ steps.pl.outputs.new-version-2 }}
           echo ${{ steps.pl.outputs.new-version-3 }}
+          echo ${{ steps.pl.outputs.new-version-4 }}
       
       - name: Update1 version.yml
         uses: fjogeleit/yaml-update-action@main
@@ -94,13 +97,24 @@ jobs:
       
       - name: Output results
         run: |
-          echo ${{ needs.build.outputs.output1 }}
+          echo ${{ needs.build.outputs.output4 }}
 
       - name: Update version.yml
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'version2.yml'
-          propertyPath: 'dependencies.version1'
+          propertyPath: 'version'
+          value: ${{ needs.build.outputs.output4 }}
+          branch: main
+          targetBranch: main
+          commitChange: 'true'
+          updateFile: 'true'
+
+      - name: Update version.yml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'version2.yml'
+          propertyPath: 'dependencies.-version'
           value: ${{ needs.build.outputs.output1 }}
           branch: main
           targetBranch: main
