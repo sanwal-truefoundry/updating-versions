@@ -75,7 +75,7 @@ jobs:
   
   notify:
     name: Updating Version 2
-    needs: [print]
+    needs: [print,build]
     runs-on: ubuntu-latest
 
     steps:
