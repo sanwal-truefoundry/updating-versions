@@ -1,6 +1,6 @@
 name: Printing Version
 
-on: [push]
+on: [push, workflow_call]
 
 jobs:
   print:
