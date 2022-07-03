@@ -1,19 +1,19 @@
 apiVersion: v2
 name: truefoundry
-version: 0.1.27
-description: "Truefoundry applications"
+version: 0.1.28
+description: Truefoundry applications
 maintainers:
   - name: truefoundry
 dependencies:
   - condition: mlfoundry-server.enabled
     name: mlfoundry-server
     repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-    version: 0.1.11
+    version: 0.1.12
   - condition: servicefoundry-server.enabled
     name: servicefoundry-server
     repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-    version: 0.1.13
+    version: 0.1.14
   - condition: truefoundry-frontend-app.enabled
     name: truefoundry-frontend-app
     repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-    version: 0.1.19
+    version: 0.1.20
