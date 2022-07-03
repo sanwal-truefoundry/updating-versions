@@ -97,11 +97,28 @@ jobs:
           commitChange: 'true'
           updateFile: 'true'
 
-      - name: Update version.yml
-        run: |
-          repo, err := git.CloneGithub("sanwal-truefoundry/updating-versions")
-          file, err := repo.ReadFile("version2.yaml")
-          document, err := document.Parse(file)
-          err = document.Set("dependencies.version", "${{ needs.build.outputs.output1 }}")
-          err = document.Write(file)
-          err = repo.Commit("updated something")
+      - name: Find and Replace
+        uses: DamianReeves/write-file-action
+        with:
+          path: version2.yml
+          contents: |
+            apiVersion: v2
+            name: truefoundry
+            version: ${{ needs.build.outputs.output4 }}
+            description: Truefoundry applications
+            maintainers:
+              - name: truefoundry
+            dependencies:
+              - condition: mlfoundry-server.enabled
+              name: mlfoundry-server
+              repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
+              version: ${{ needs.build.outputs.output1 }}
+            - condition: servicefoundry-server.enabled
+              name: servicefoundry-server
+              repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
+              version: ${{ needs.build.outputs.output2 }}
+            - condition: truefoundry-frontend-app.enabled
+              name: truefoundry-frontend-app
+              repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
+              version: ${{ needs.build.outputs.output3 }}
+          write-mode: overwrite
