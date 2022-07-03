@@ -21,10 +21,10 @@ jobs:
         id: pl
         uses: sanwal-truefoundry/updating-versions@main
         with:
-          file-1: 'mlfoundry-server.yml'
-          file-2: 'servicefoundry-server.yml'
-          file-3: 'truefoundry-frontend-app.yml'
-          file-4: 'version2.yml'
+          file-1: 'mlfoundry-server/Chart.yml'
+          file-2: 'servicefoundry-server/Chart.yml'
+          file-3: 'truefoundry-frontend-app/Chart.yml'
+          file-4: 'truefoundry/Chart.yml'
       
       - name: Output results
         run: |
