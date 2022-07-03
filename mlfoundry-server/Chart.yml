@@ -3,7 +3,7 @@
 
 apiVersion: v2
 name: mlfoundry-server
-version: 
+version: 0.1.11
 description: "Helm Chart for MLFoundry"
 maintainers:
   - name: truefoundry
