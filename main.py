@@ -14,7 +14,7 @@ def main():
 
     with open(first_input_file, 'r') as f1:
         data1 = f1.readlines()
-        y1 = data1[2]
+        y1 = data1[5]
 
     print(y1)
     l1 = len(y1)

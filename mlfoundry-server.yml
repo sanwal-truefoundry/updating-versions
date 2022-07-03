@@ -1,6 +1,0 @@
-apiVersion: v2
-name: mlfoundry-server
-version: 0.1.23
-description: Helm Chart for MLFoundry
-maintainers:
-  - name: truefoundry
