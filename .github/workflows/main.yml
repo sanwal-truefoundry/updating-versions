@@ -71,6 +71,7 @@ jobs:
   print:
     name: Calling Print workflow
     uses: ./.github/workflows/print.yml
+    needs: [build]
   
   notify:
     name: Updating Version 2
