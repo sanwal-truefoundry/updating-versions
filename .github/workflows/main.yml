@@ -68,6 +68,10 @@ jobs:
           commitChange: 'true'
           updateFile: 'true'
   
+  print:
+    name: Calling Print workflow
+    uses: ./.github/workflows/print.yml
+  
   notify:
     name: Updating Version 2
     needs: [print]
