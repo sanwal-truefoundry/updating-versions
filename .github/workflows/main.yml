@@ -86,17 +86,6 @@ jobs:
         run: |
           echo ${{ needs.build.outputs.output4 }}
 
-      - name: Update version.yml
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          valueFile: 'version2.yml'
-          propertyPath: 'version'
-          value: ${{ needs.build.outputs.output4 }}
-          branch: main
-          targetBranch: main
-          commitChange: 'true'
-          updateFile: 'true'
-
       - name: Find and Replace
         uses: DamianReeves/write-file-action@master
         with:
