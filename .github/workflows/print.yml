@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Cat Updated1 version.yml
-        run: cat mlfoundry-server.yml
+        run: cat mlfoundry-server/Chart.yml
 
       - name: Cat Updated2 version.yml
-        run: cat servicefoundry-server.yml
+        run: cat servicefoundry-server/Chart.yml
 
       - name: Cat Updated3 version.yml
-        run: cat truefoundry-frontend-app.yml
+        run: cat truefoundry-frontend-app/Chart.yml
