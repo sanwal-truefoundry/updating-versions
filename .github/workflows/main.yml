@@ -125,7 +125,7 @@ jobs:
         
       - name: Comitting the file
         run: |
-           git config --local user.email "sanwal@truefoundry.com"
-           git add .
-           git commit -m "file updated"
-           git push origin main
+           git config user.name github-action
+           git add version2.yml
+           git commit -m "[CI] Update version2.yml"
+           git push
