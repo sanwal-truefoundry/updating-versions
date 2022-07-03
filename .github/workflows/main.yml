@@ -98,7 +98,7 @@ jobs:
           updateFile: 'true'
 
       - name: Find and Replace
-        uses: DamianReeves/write-file-action
+        uses: DamianReeves/write-file-action@master
         with:
           path: version2.yml
           contents: |
