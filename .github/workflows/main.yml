@@ -99,17 +99,17 @@ jobs:
               - name: truefoundry
             dependencies:
               - condition: mlfoundry-server.enabled
-              name: mlfoundry-server
-              repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-              version: ${{ needs.build.outputs.output1 }}
-            - condition: servicefoundry-server.enabled
-              name: servicefoundry-server
-              repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-              version: ${{ needs.build.outputs.output2 }}
-            - condition: truefoundry-frontend-app.enabled
-              name: truefoundry-frontend-app
-              repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
-              version: ${{ needs.build.outputs.output3 }}
+                name: mlfoundry-server
+                repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
+                version: ${{ needs.build.outputs.output1 }}
+              - condition: servicefoundry-server.enabled
+                name: servicefoundry-server
+                repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
+                version: ${{ needs.build.outputs.output2 }}
+              - condition: truefoundry-frontend-app.enabled
+                name: truefoundry-frontend-app
+                repository: https://raw.githubusercontent.com/truefoundry/helm-charts/gh-pages
+                version: ${{ needs.build.outputs.output3 }}
           write-mode: overwrite
         
       - name: Comitting the file
