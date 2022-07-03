@@ -1,6 +1,6 @@
 name: Updating Version
 
-on: [workflow_dispatch, push]
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -67,28 +67,10 @@ jobs:
           targetBranch: main
           commitChange: 'true'
           updateFile: 'true'
-
-  print:
-    name: Printing version file
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Cat Updated1 version.yml
-        run: cat mlfoundry-server.yml
-
-      - name: Cat Updated2 version.yml
-        run: cat servicefoundry-server.yml
-
-      - name: Cat Updated3 version.yml
-        run: cat truefoundry-frontend-app.yml
   
   notify:
     name: Updating Version 2
-    needs: [print,build]
+    needs: [print]
     runs-on: ubuntu-latest
 
     steps:

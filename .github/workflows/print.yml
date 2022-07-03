@@ -1,0 +1,21 @@
+name: Printing Version
+
+on: [push]
+
+jobs:
+  print:
+    name: Printing Version
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cat Updated1 version.yml
+        run: cat mlfoundry-server.yml
+
+      - name: Cat Updated2 version.yml
+        run: cat servicefoundry-server.yml
+
+      - name: Cat Updated3 version.yml
+        run: cat truefoundry-frontend-app.yml
