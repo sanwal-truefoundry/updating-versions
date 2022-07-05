@@ -35,7 +35,7 @@ jobs:
       
       - name: Find and Replace MLFoundry Version
         run: |
-          sh sed  -i '/version/s/[^.]*$/'"${steps.pl.outputs.new-version-1}\"/" package.json
+          sh sed  -i '/version/s/[^.]*$/'"${steps.pl.outputs.new-version-1}\"/" mlfoundry-server/Chart.yml
 
       
       - name: Find and Replace ServiceFoundry Version
