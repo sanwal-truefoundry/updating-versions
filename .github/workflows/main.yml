@@ -34,20 +34,8 @@ jobs:
           echo ${{ steps.pl.outputs.new-version-4 }}
       
       - name: Find and Replace MLFoundry Version
-        uses: DamianReeves/write-file-action@master
-        with:
-          path: mlfoundry-server/Chart.yml
-          contents: |
-            # From https://github.com/artefactory-global/mlflow-tracking-server
-            # From https://github.com/cetic/helm-mlflow
-
-            apiVersion: v2
-            name: mlfoundry-server
-            version: ${{ steps.pl.outputs.new-version-1 }}
-            description: "Helm Chart for MLFoundry"
-            maintainers:
-              - name: truefoundry
-          write-mode: overwrite
+        run: |
+          sh sed  -i '/version/s/[^.]*$/'"${steps.pl.outputs.new-version-1}\"/" package.json
 
       
       - name: Find and Replace ServiceFoundry Version
